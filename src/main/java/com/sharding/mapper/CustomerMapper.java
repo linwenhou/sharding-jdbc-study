@@ -1,6 +1,6 @@
 package com.sharding.mapper;
 
-import com.sharding.entity.Customer;
+import com.sharding.entity.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

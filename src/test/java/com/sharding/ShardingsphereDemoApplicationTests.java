@@ -1,15 +1,13 @@
 package com.sharding;
 
-import com.sharding.entity.Customer;
-import com.sharding.entity.Orders;
-import com.sharding.entity.common.DictOrderType;
+import com.sharding.entity.*;
+import com.sharding.entity.common.*;
 import com.sharding.mapper.CustomerMapper;
 import com.sharding.mapper.DictOrderTypeMapper;
 import com.sharding.mapper.OrdersMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 
 import java.util.Random;
 
@@ -82,6 +80,7 @@ public class ShardingsphereDemoApplicationTests {
     public void insertDictOrderType(){
         for (int i = 1; i <= 10 ; i++) {
             DictOrderType dictOrderType = new DictOrderType();
+            dictOrderType.setId(i);
             dictOrderType.setOrderType("orderType"+i);
             dictOrderTypeMapper.insertDictOrderType(dictOrderType);
         }
@@ -90,5 +89,9 @@ public class ShardingsphereDemoApplicationTests {
     @Test
     public void deleteDictOrderType(){
         dictOrderTypeMapper.DeleteDictOrderType(1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("hello");
     }
 }

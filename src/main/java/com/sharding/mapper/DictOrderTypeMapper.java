@@ -1,6 +1,6 @@
 package com.sharding.mapper;
 
-import com.sharding.entity.common.DictOrderType;
+import com.sharding.entity.common.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,8 +1,8 @@
 package com.sharding.mapper;
 
-import com.sharding.entity.Orders;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+import com.sharding.entity.*;
 
 @Repository
 @Mapper
