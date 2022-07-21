@@ -5,6 +5,7 @@ import com.sharding.entity.common.*;
 import com.sharding.mapper.CustomerMapper;
 import com.sharding.mapper.DictOrderTypeMapper;
 import com.sharding.mapper.OrdersMapper;
+import com.sharding.mapper.PersonMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -91,7 +92,22 @@ public class ShardingsphereDemoApplicationTests {
         dictOrderTypeMapper.DeleteDictOrderType(1);
     }
 
-    public static void main(String[] args) {
-        System.out.println("hello");
+  //-----读写分离
+
+    @Autowired
+    private PersonMapper personMapper;
+
+    @Test
+    public void insertPerson(){
+        Person person = new Person();
+        person.setId(1l);
+        person.setName("zhangsan");
+        personMapper.insertPerson(person);
+    }
+
+    @Test
+    public void queryPerson(){
+        Person person = personMapper.queryPerson(1l);
+        System.out.println(person);
     }
 }

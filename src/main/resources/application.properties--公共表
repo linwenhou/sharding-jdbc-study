@@ -3,21 +3,18 @@ spring.shardingsphere.datasource.names=ds1,ds2
 #配置第一个数据源
 spring.shardingsphere.datasource.ds1.type=com.alibaba.druid.pool.DruidDataSource
 spring.shardingsphere.datasource.ds1.driver-class-name=com.mysql.jdbc.Driver
-spring.shardingsphere.datasource.ds1.url=jdbc:mysql://192.168.35.111:3306/shardingsphere?serverTimezone=UTC
+spring.shardingsphere.datasource.ds1.url=jdbc:mysql://192.168.35.111:3306/sharding_sphere?serverTimezone=UTC
 spring.shardingsphere.datasource.ds1.username=root
 spring.shardingsphere.datasource.ds1.password=root12345
 
 #配置第二个数据源
 spring.shardingsphere.datasource.ds2.type=com.alibaba.druid.pool.DruidDataSource
 spring.shardingsphere.datasource.ds2.driver-class-name=com.mysql.jdbc.Driver
-spring.shardingsphere.datasource.ds2.url=jdbc:mysql://192.168.35.112:3306/shardingsphere?serverTimezone=UTC
+spring.shardingsphere.datasource.ds2.url=jdbc:mysql://192.168.35.112:3306/sharding_sphere?serverTimezone=UTC
 spring.shardingsphere.datasource.ds2.username=root
 spring.shardingsphere.datasource.ds2.password=root12345
 
-#主库从库逻辑定义
-spring.shardingsphere.masterslave.name=ms
-spring.shardingsphere.masterslave.master-data-source-name=ds1
-spring.shardingsphere.masterslave.slave-data-source-names=ds2
-
-#显示执行的sql
-spring.shardingsphere.props.sql.show=true
+#配置公共表
+spring.shardingsphere.sharding.broadcast-tables=dict_order_type
+spring.shardingsphere.sharding.tables.dict_order_type.key-generator.column=id
+spring.shardingsphere.sharding.tables.dict_order_type.key-generator.type=SNOWFLAKE
