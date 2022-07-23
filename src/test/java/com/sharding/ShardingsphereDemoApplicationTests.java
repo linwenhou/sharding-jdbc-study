@@ -6,10 +6,13 @@ import com.sharding.mapper.CustomerMapper;
 import com.sharding.mapper.DictOrderTypeMapper;
 import com.sharding.mapper.OrdersMapper;
 import com.sharding.mapper.PersonMapper;
+import com.sharding.service.ExampleService;
+import com.sharding.service.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.SQLException;
 import java.util.Random;
 
 @SpringBootTest
@@ -109,5 +112,20 @@ public class ShardingsphereDemoApplicationTests {
     public void queryPerson(){
         Person person = personMapper.queryPerson(1l);
         System.out.println(person);
+    }
+
+
+    //sharding-jdbc强制路由
+
+    @Autowired
+    private ExampleService orderService;
+
+    @Test
+    public void initEnv(){
+        try {
+            orderService.initEnvironment();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

@@ -3,14 +3,16 @@ spring.shardingsphere.datasource.names=ds1,ds2
 #配置第一个数据源
 spring.shardingsphere.datasource.ds1.type=com.alibaba.druid.pool.DruidDataSource
 spring.shardingsphere.datasource.ds1.driver-class-name=com.mysql.jdbc.Driver
-spring.shardingsphere.datasource.ds1.url=jdbc:mysql://192.168.35.111:3306/shardingsphere?serverTimezone=UTC
+spring.shardingsphere.datasource.ds1.url=jdbc:mysql://192.168.35.111:3306/msb?serverTimezone=UTC
 spring.shardingsphere.datasource.ds1.username=root
 spring.shardingsphere.datasource.ds1.password=root12345
 
 #配置第二个数据源
 spring.shardingsphere.datasource.ds2.type=com.alibaba.druid.pool.DruidDataSource
 spring.shardingsphere.datasource.ds2.driver-class-name=com.mysql.jdbc.Driver
-spring.shardingsphere.datasource.ds2.url=jdbc:mysql://192.168.35.112:3306/shardingsphere?serverTimezone=UTC
+#spring.shardingsphere.datasource.ds2.url=jdbc:mysql://192.168.35.112:3306/shardingsphere?serverTimezone=UTC
+spring.shardingsphere.datasource.ds2.url=jdbc:mysql://192.168.35.112:3306/msb?serverTimezone=UTC
+
 spring.shardingsphere.datasource.ds2.username=root
 spring.shardingsphere.datasource.ds2.password=root12345
 
